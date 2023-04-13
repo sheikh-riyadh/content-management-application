@@ -6,15 +6,12 @@ const DetailsModal = () => {
 
     return (
         <div>
-            {/* Put this part before </body> tag */}
             <input type="checkbox" id="details-modal" className="modal-toggle" />
             <div className="modal">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Title: {details[0]?.title}</h3>
-                    <p className="py-4">Body: {details[0]?.body}</p>
-                    <div className="modal-action">
-                        <label htmlFor="details-modal" className="btn">Yay!</label>
-                    </div>
+                <div className="modal-box relative">
+                    <label htmlFor="details-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="text-lg font-bold">{details[0]?.title}</h3>
+                    <p className="py-4">{details[0]?.body}</p>
                 </div>
             </div>
         </div>
