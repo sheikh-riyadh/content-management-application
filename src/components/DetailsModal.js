@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const DetailsModal = () => {
-    const { details } = useSelector(state => state)
+    const { details } = useSelector(state => state.posts)
 
     return (
         <div>
