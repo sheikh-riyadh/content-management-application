@@ -6,6 +6,7 @@ import About from './pages/About';
 import CreatePost from './pages/CreatePost';
 import RecentView from './pages/RecentView';
 import { Toaster } from 'react-hot-toast';
+import DetailsModal from './components/DetailsModal';
 
 
 
@@ -23,7 +24,7 @@ function App() {
           </Routes>
         </Sidebar>
       </BrowserRouter>
-
+      <DetailsModal />
     </div>
   );
 }

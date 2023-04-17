@@ -14,13 +14,20 @@ export const postsReducer = (state = initialState, action) => {
                 posts: action.payload
             }
         case POST_DETAILS:
+            const idIsExist = state.recentView.find(view => view._id === action.payload);
+            if (idIsExist) {
+                return {
+                    ...state,
+                    details: state.posts.find(post => post._id === action.payload)
+                }
+            }
             return {
                 ...state,
-                details: state.posts.filter(post => post._id === action.payload),
                 recentView: [
                     ...state.recentView,
                     ...state.posts.filter(post => post._id === action.payload)
-                ]
+                ],
+                details: state.posts.find(post => post._id === action.payload)
             }
         default:
             return state
