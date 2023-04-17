@@ -16,7 +16,11 @@ export const postsReducer = (state = initialState, action) => {
         case POST_DETAILS:
             return {
                 ...state,
-                details: state.posts.filter(post => post._id === action.payload)
+                details: state.posts.filter(post => post._id === action.payload),
+                recentView: [
+                    ...state.recentView,
+                    ...state.posts.filter(post => post._id === action.payload)
+                ]
             }
         default:
             return state

@@ -5,12 +5,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import CreatePost from './pages/CreatePost';
 import RecentView from './pages/RecentView';
+import { Toaster } from 'react-hot-toast';
 
 
 
 function App() {
   return (
     <div>
+      <Toaster />
       <BrowserRouter>
         <Sidebar>
           <Routes>
